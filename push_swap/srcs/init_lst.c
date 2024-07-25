@@ -57,7 +57,7 @@ t_list	*add_nodes(char **av, t_list *lst, int i)
 			ft_error2(av, lst);
 		if (check_lst(nbr, lst) == -1)
 			ft_error2(av, lst);
-		new_node = ft_lstnew(nbr);
+		new_node = ft_lstnew(nbr, ft_lstsize(lst));
 		if (!new_node)
 			ft_error2(av, lst);
 		ft_lstadd_back(&lst, new_node);
@@ -97,7 +97,7 @@ t_list	*create_lst(int ac, char **av)
 	nbr = ft_atoi(str[j]);
 	if (nbr > INT_MAX || nbr < INT_MIN)
 		ft_error2(str, new_lst);
-	new_lst = ft_lstnew(nbr);
+	new_lst = ft_lstnew(nbr, 0);
 	if (!new_lst)
 	{
 		ft_free_str(str);
