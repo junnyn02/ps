@@ -88,7 +88,7 @@ t_list	*push_lst(t_list *stack_src, t_list *stack_dest, char c)
 
 	if (!stack_src)
 		return (NULL);
-	new_node = ft_lstnew(stack_src->content);
+	new_node = ft_lstnew(stack_src->content, ft_lst(stack_dest));
 	if (!new_node)
 		exit(EXIT_FAILURE);
 	printf("p%c\n", c);
