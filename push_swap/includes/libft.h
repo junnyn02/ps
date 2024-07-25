@@ -59,10 +59,11 @@ size_t	ft_strlen(const char *str);
 typedef struct s_list
 {
 	int				content;
+	int				position;
 	struct s_list	*next;
 }	t_list;
 
-t_list	*ft_lstnew(int content);
+t_list	*ft_lstnew(int content; int position);
 t_list	*ft_lstlast(t_list *lst);
 t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *));
 int		ft_lstsize(t_list *lst);
